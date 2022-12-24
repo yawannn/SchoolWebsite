@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAN 2 KOTA BIMA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body >
+    <nav class="py-2 px-8 text-black">
+        <div class="mx-auto">
+            <div class="flex justify-between">
+                <div class="flex justify-between text-xl md:w-10/12">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2 gap-4">
+                            <img class="object-contain w-14" src="asset/m2.png" alt="">
+                            <span class="font-semibold text-black text-lg">MAN 2 KOTA BIMA</span>
+                        </a>
+                    </div>
+                    <div class="hidden lg:flex lg:visible items-center space-x-4">
+                        <a href="" class="py-4 px-2 text-black text-sm font-normal hover:undeline transition duration-300">Beranda</a>
+                        <a href="" class="py-4 px-2 text-black text-sm font-normal hover:undeline transition duration-300">Tentang</a>
+                        <a href="" class="py-4 px-2 text-black text-sm font-normal hover:undeline transition duration-300">Kontak Kami</a>
+                        <a href="" class="py-1 px-8 text-white text-sm font-normal bg-green-500 rounded-2xl">Cari</a>
+                    </div>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-black hover:border-2 border-black rounded-md "
+                        x-show="!showMenu"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="text-black">
+                <li class="active"><a href="index.html" class="block text-sm px-2 py-4 hover:bg-green-300 hover:text-black transition duration-300">Beranda</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-300 hover:text-black transition duration-300">Tentang</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-300 hover:text-black transition duration-300">Kontak Kami</a></li>
+                <li></li>
+            </ul>
+        </div>
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </nav>
+    <section class="min-h-screen px-8 ">
+        <div class="flex lg:flex-row justify-around items-center">
+            <div class="py-32 px-4">
+                <h3 class="font-light text-xl">MAN 2 KOTA BIMA Merupakan</h3>
+                <h1 class="py-4 font-bold text-3xl">SEKOLAH ISLAM TERINTEGRASI</h1>
+                <p class="pb-4 max-w-2xl">MAN 2 Kota Bima merupakan sekolah islam yang berada di kota bima, berdiri sejak tahun 1978, sekarang bertumbuh menjadi sekolah terdepan di kota bima</p>
+                <a class="hover:underline" href="#">Read More <img src="" alt=""></a>
+            </div>
+            <div class="hidden md:block">
+                <img src="asset/herobig.png" alt="">
+            </div>
+        </div>
+    </section>
+    <div class="relative flex py-8 px-8 items-center">
+        <div class="flex-grow border-t border-green-400"></div>
+        <div class="flex-grow border-t border-green-400"></div>
+    </div>
+    <section class="py-8 px-8 pb-8">
+        <div class="flex flex-row text-center justify-around">
+            <div>
+                <h1 class="font-bold text-xl">706</h1>
+                <h3>Siswa</h3>
+            </div>
+            <div>
+                <h1 class="font-bold text-xl">32</h1>
+                <h3>Guru</h3>
+            </div>
+            <div>
+                <h1 class="font-bold text-xl ">25</h1>
+                <h3>Tendik</h3>
+            </div>
+        </div>
+    </section>
+    <h1 class="text-center text-2xl font-semibold py-8">Berita Terkini MAN 2 Kota Bima</h1>
+    <section class="py-8 text-white">
+        <div x-data="{
+                openTab: 1,
+                activeClasses:'text-opacity-100',
+                inactiveClasses:'text-opacity-30'
+            }" class="max-w-4xl mx-auto p-4 bg-green-500 rounded-2xl">
+            <ul class="flex">
+                <li @click="openTab = 1" :class="{ '-mb-px': openTab === 1 }" class="mr-1 ">
+                    <a :class="openTab === 1 ? activeClasses : inactiveClasses"
+                        class="hover:text-black hover:bg-gray-100 rounded-lg inline-block py-2 px-4 font-semibold"
+                        href="#">Recent News</a>
+                </li>
+                <li @click="openTab = 2" :class="{ '-mb-px': openTab === 1 }" class="mr-1">
+                    <a :class="openTab === 2 ? activeClasses : inactiveClasses"
+                        class="hover:text-black hover:bg-gray-100 rounded-lg inline-block py-2 px-4 font-semibold"
+                        href="#">PPDB</a>
+                </li>
+                <li @click="openTab = 3" :class="{ '-mb-px': openTab === 1 }" class="mr-1">
+                    <a :class="openTab === 3 ? activeClasses : inactiveClasses"
+                        class="hover:text-black hover:bg-gray-100 rounded-lg inline-block py-2 px-4 font-semibold"
+                        href="#">Pengumuman</a>
+                </li>
+                <li @click="openTab = 4" :class="{ '-mb-px': openTab === 1 }" class="mr-1">
+                    <a :class="openTab === 4 ? activeClasses : inactiveClasses"
+                        class="hover:text-black hover:bg-gray-100 rounded-lg inline-block py-2 px-4 font-semibold"
+                        href="#">Event</a>
+                </li>
+            </ul>
+            <div class="w-full p-4 bg-green-500">
+                <div x-show="openTab === 1" class="flex flex-col gap-8">
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">MAN 2 Kota Bima menyumbang 1 perwakilan PASKIBRAKA
+                                Nasional</h1>
+                            <p class=" py-4 text-sm font-thin">Perwakilan NTB Paskibraka 2020 merupakan siswa kelas IPA
+                                1...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div x-show="openTab === 2" class="flex flex-col gap-8">
+
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div x-show="openTab === 3" class="flex flex-col gap-8">
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div x-show="openTab === 4" class="flex flex-col gap-8">
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="basis-3/5">
+                            <h1 class="text-base font-medium">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA</h1>
+                            <p class=" py-4 text-sm font-thin">Wisuda Angkatan 1 Boarding School MAN 2 KOTA BIMA
+                                diselenggarakan di...</p>
+                            <a class="hover:underline" href="#">Read More</a>
+                        </div>
+                        <div class="basis-2/5">
+                            <img src="asset/berita1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="relative flex py-16 px-8 items-center">
+        <div class="flex-grow border-t border-green-400"></div>
+        <div class="flex-grow border-t border-green-400"></div>
+    </div>
+    <footer class="bg-green-500 rounded-t-xl">
+        <div class="flex flex-col gap-8">
+            <div class=" flex flex-row text-sm gap-4 text-white px-4 py-4 justify-around">
+                <div class="basis-1/6">
+                    <h1 class="text-lg font-semibold">Tentang Kami</h1>
+                </div>
+                <div class="basis-4/6 max-w-xl">
+                    <p>MAN 2 Kota Bima merupakan sekolah islam yang berada di kota bima, berdiri sejak tahun 1978, sekarang bertumbuh menjadi sekolah terdepan di kota bima</p>
+                </div>
+                <div class="basis-1/6 text-center font-medium">
+                    Kontak Kami
+                    <div class=" py-4 flex flex-col gap-4 md:flex-row">
+                        <a href="#">Instagram</a>
+                        <a href="#">Website</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <p class="top-16 text-center">© 2022 Man 2 Kota Bima. All Rights Reserved</p>
+        </div>
+        
+    </footer>
+</body>
+
+</html>
